@@ -4,9 +4,9 @@ html(lang='en')
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
-		meta(name='description', content='SHA1 Hash Generator')
-		meta(name='author', content='SHA-256 Hash Generator')
-		title SHA-256 Hash Generator
+		meta(name='description', content='')
+		meta(name='author', content='')
+		title Online Formatter, Generator, Encoder & Decoder and Hash
 		// Bootstrap core CSS
 		link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", rel="stylesheet", integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==", crossorigin="anonymous")
 		link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==", crossorigin="anonymous")
@@ -46,6 +46,8 @@ html(lang='en')
 							li
 								a(href="/contact")
 									strong Contact
+
+
 		section.content
 			.container
 				.row
@@ -128,7 +130,7 @@ html(lang='en')
 									li
 										a(href="sha1")
 											i SHA-1
-									li.menu-active
+									li
 										a(href="sha256")
 											i SHA-256
 									li
@@ -183,32 +185,13 @@ html(lang='en')
 					//content
 					.col-md-6.content
 						.content-inner
-							h3(class="page-header") SHA-256 Hash Generator
-							p Computes a digest from a string using SHA-256 algorithms
-							br
-							//ads
+							h2(class="page-header") Contact
+							h4(style="font-size: medium;") If you have any questions or suggestions please email me at <a href="mailto:online.formatter@gmail.com"> online.formatter@gmail.com</a>
 
+						//Content
 
-							//content
-							form(class="form-horizontal")
-								.form-group
-									label(class="col-sm-2 control-label", for="sha256_input") String to hash
-									.col-sm-10
-										textarea(class="form-control", id="sha256_input", rows=5)
-								.form-group
-									.col-sm-offset-2.col-sm-10
-										button(class="btn btn-primary", id="sha256_btn") Generate
-								.form-group
-									label(class="col-sm-2 control-label", for="sha256_output") Result
-									.col-sm-10
-										pre(id="sha256_output", style="height:100px; padding: 15px")
+						//Ads
 
-							br
-							br
-							h4(style="font-size: medium; font-weight: bold") What is SHA-2?
-							ul
-								li <b>SHA-2 (Secure Hash Algorithm 2)</b> is a set of cryptographic hash functions designed by the NSA. SHA stands for Secure Hash Algorithm. Cryptographic hash functions are mathematical operations run on digital data; by comparing the computed "hash" (the output from execution of the algorithm) to a known and expected hash value, a person can determine the data's integrity. For example, computing the hash of a downloaded file and comparing the result to a previously published hash result can show whether the download has been modified or tampered with.[4] A key aspect of cryptographic hash functions is their collision resistance: nobody should be able to find two different input values that result in the same hash output.
-								li SHA-2 includes significant changes from its predecessor, SHA-1. The SHA-2 family consists of six hash functions with digests (hash values) that are 224, 256, 384 or 512 bits: <b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, SHA-512/256</b>.
 					//ads
 					.col-md-3
 
@@ -219,8 +202,8 @@ html(lang='en')
 					div(class="col-xs-12", style="text-align: center;")
 						p(class="text-muted") © 2015 online-formatter.com</p>
 
-
+		// Bootstrap core JavaScript
+		// ==================================================
+		// Placed at the end of the document so the pages load faster
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
 		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==", crossorigin="anonymous")
-		script(src='http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha256.js')
-		script(src='javascripts/main.min.js')

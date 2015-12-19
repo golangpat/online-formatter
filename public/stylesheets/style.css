@@ -1,5 +1,5 @@
 body {
-    padding: 50px;
+    padding: 50px 20px 0px 20px;
     font: 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: normal;
     line-height: 18px;
@@ -12,6 +12,7 @@ a {
 
 .side-menu {
     background-color: #f1f1f1;
+    margin-bottom: 30px;
 }
 
 .content .container {
