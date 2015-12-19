@@ -93,3 +93,9 @@ li.nav-header > a.collapsed:after {
     background-color: rgba(194, 194, 194, 0.27);
     font-weight: bold;
 }
+div.ad-wrapper {
+    margin: auto;
+    text-align: center;
+    padding: 20px 0px 0px 0px;
+    margin-bottom: 20px;
+}
