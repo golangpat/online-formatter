@@ -31,6 +31,37 @@ var accessLogStream = FileStreamRotator.getStream({
     date_format: "YYYY-MM-DD"
 })
 
+
+logger.token("remote-addr", function(request) {
+
+    var retval = "";
+
+    if (request["headers"] && request["headers"]["x-forwarded-for"]) {
+        //
+        // Proxied request
+        //
+        retval = request["headers"]["x-forwarded-for"];
+
+    } else if (request["socket"] && request["socket"]["remoteAddress"]) {
+        //
+        // Direct request
+        //
+        retval = request["socket"]["remoteAddress"];
+
+    } else if (request["socket"] && request["socket"]["socket"]
+        && request["socket"]["socket"]["remoteAddress"]) {
+        //
+        // God only knows what happened here...
+        //
+        retval = request["socket"]["socket"]["remoteAddress"];
+
+    }
+
+    return(retval);
+
+});
+
+
 // setup the logger
 app.use(logger('common', {stream: accessLogStream}));
 //app.use(logger('dev'));
