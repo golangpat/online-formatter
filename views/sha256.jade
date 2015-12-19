@@ -1,0 +1,218 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		meta(name='description', content='SHA1 Hash Generator')
+		meta(name='author', content='SHA-256 Hash Generator')
+		title SHA-256 Hash Generator
+		// Bootstrap core CSS
+		link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", rel="stylesheet", integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==", crossorigin="anonymous")
+		link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==", crossorigin="anonymous")
+		// Custom styles for this template
+		link(href='/stylesheets/style.css', rel='stylesheet')
+		// HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+		//if lt IE 9
+		script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+		script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+	body
+		section.header
+			nav(class="navbar navbar-default navbar-fixed-top")
+				.container
+					.navbar-header
+						button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar", aria-expanded="false", aria-controls="navbar")
+							span(class="sr-only") Toggle navigation
+							span(class="icon-bar")
+							span(class="icon-bar")
+							span(class="icon-bar")
+						a(class="navbar-brand brand", href="/") Online-formatter.com
+					#navbar.navbar-collapse.collapse
+						ul(class="nav navbar-nav")
+							li
+								a(href="/formatters") Formatters
+							li
+								a(href="/encoder-decoder") Encoders & Decoders
+							li
+								a(href="/generators") Generators
+							li
+								a(href="/hashes") Hashes
+
+						ul(class="nav navbar-nav navbar-right")
+							li
+								a(href="/contact") Contact
+		section.content
+			.container
+				.row
+					//menu
+					.col-md-3
+						ul(class="nav nav-pills nav-stacked side-menu")
+							li(class="nav-header")
+								a(data-toggle="collapse" data-target="#formatter")
+									span Formatters
+								ul(class="nav nav-pills nav-stacked collapse in", id="formatter")
+									li
+										a(href="json-formatter")
+											i JSON Formatter
+									li
+										a(href="html-formatter")
+											i HTML Formatter
+									li
+										a(href="xml-formatter")
+											i XML Formatter
+									li
+										a(href="css-formatter")
+											i CSS Formatter
+
+							li(class="nav-header")
+								a(data-toggle="collapse" data-target="#encode-decode")
+									span Encoders & Decoders
+								ul(class="nav nav-pills nav-stacked collapse in", id="encode-decode")
+									li
+										a(href="url-encode-decode")
+											i Url Encoder & Decoder
+									li
+										a(href="base64-encode-decode")
+											i Base 64 Encoder & Decoder
+
+							li(class="nav-header")
+								a(data-toggle="collapse" data-target="#generator")
+									span Generators
+								ul(class="nav nav-pills nav-stacked collapse in", id="generator")
+									li
+										a(href="credit-card-generator")
+											i Credit Card Generator
+									li
+										a(href="qr-code-generator")
+											i QR Code Generator
+
+							li(class="nav-header")
+								a(data-toggle="collapse" data-target="#hash")
+									span Hashes
+								ul(class="nav nav-pills nav-stacked collapse in", id="hash")
+									//li
+										a(href="#")
+											i Adler32
+									//li
+										a(href="#")
+											i CRC-32
+									//li
+										a(href="#")
+											i CRC-32B
+									//li
+										a(href="#")
+											i Gost
+									//li
+										a(href="#")
+											i Haval-128
+									//li
+										a(href="#")
+											i htpasswd Apache
+									li
+										a(href="md4")
+											i MD4
+									li
+										a(href="md5")
+											i MD5
+									//li
+										a(href="#")
+											i RIPEMD-128
+									li
+										a(href="ripemd160")
+											i RIPEMD-160
+									li
+										a(href="sha1")
+											i SHA-1
+									li.menu-active
+										a(href="sha256")
+											i SHA-256
+									li
+										a(href="sha384")
+											i SHA-384
+									li
+										a(href="sha512")
+											i SHA-512
+									//li
+										a(href="#")
+											i Snefru
+									//li
+										a(href="#")
+											i Tiger-128
+									//li
+										a(href="#")
+											i Tiger-160
+									//li
+										a(href="#")
+											i Tiger-192
+									//li
+										a(href="#")
+											i Whirlpool
+
+							//li(class="nav-header")
+								a(data-toggle="collapse" data-target="#encrypt-decrypt")
+									span Encrypt/Decrypt
+								ul(class="nav nav-pills nav-stacked collapse in", id="encrypt-decrypt")
+									li
+										a(href="#")
+											i Blowfish
+
+							//li(class="nav-header")
+								a(data-toggle="collapse" data-target="#validator")
+									span Validators
+								ul(class="nav nav-pills nav-stacked collapse in", id="validator")
+									li
+										a(href="#")
+											i JSON Validator
+									li
+										a(href="#")
+											i HTML Validator
+									li
+										a(href="#")
+											i XML Validator - XSD
+									li
+										a(href="#")
+											i XPath Tester
+									li
+										a(href="#")
+											i Regular Expression Tester
+					//content
+					.col-md-6.content
+						.content-inner
+							h3(class="page-header") SHA-256 Hash Generator
+							p Computes a digest from a string using SHA-256 algorithms
+							br
+							//ads
+
+
+							//content
+							form(class="form-horizontal")
+								.form-group
+									label(class="col-sm-2 control-label", for="sha256_input") String to hash
+									.col-sm-10
+										textarea(class="form-control", id="sha256_input", rows=5)
+								.form-group
+									.col-sm-offset-2.col-sm-10
+										button(class="btn btn-primary", id="sha256_btn") Generate
+								.form-group
+									label(class="col-sm-2 control-label", for="sha256_output") Result
+									.col-sm-10
+										pre(id="sha256_output", style="height:100px; padding: 15px")
+
+							br
+							br
+							h4(style="font-size: medium; font-weight: bold") What is SHA-2?
+							ul
+								li <b>SHA-2 (Secure Hash Algorithm 2)</b> is a set of cryptographic hash functions designed by the NSA. SHA stands for Secure Hash Algorithm. Cryptographic hash functions are mathematical operations run on digital data; by comparing the computed "hash" (the output from execution of the algorithm) to a known and expected hash value, a person can determine the data's integrity. For example, computing the hash of a downloaded file and comparing the result to a previously published hash result can show whether the download has been modified or tampered with.[4] A key aspect of cryptographic hash functions is their collision resistance: nobody should be able to find two different input values that result in the same hash output.
+								li SHA-2 includes significant changes from its predecessor, SHA-1. The SHA-2 family consists of six hash functions with digests (hash values) that are 224, 256, 384 or 512 bits: <b>SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, SHA-512/256</b>.
+					//ads
+					.col-md-3
+
+
+
+		// Bootstrap core JavaScript
+		// ==================================================
+		// Placed at the end of the document so the pages load faster
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==", crossorigin="anonymous")
+		script(src='http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha256.js')
+		script(src='javascripts/main.js')

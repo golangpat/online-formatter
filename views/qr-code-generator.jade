@@ -1,0 +1,363 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		meta(name='description', content='MD5 Hash Generator')
+		meta(name='author', content='MD5 Hash Generator')
+		title QR Code Generator
+		// Bootstrap core CSS
+		link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", rel="stylesheet", integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==", crossorigin="anonymous")
+		link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==", crossorigin="anonymous")
+		// Custom styles for this template
+		link(href='/stylesheets/style.css', rel='stylesheet')
+		// HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+		//if lt IE 9
+		script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+		script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+	body
+		section.header
+			nav(class="navbar navbar-default navbar-fixed-top")
+				.container
+					.navbar-header
+						button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar", aria-expanded="false", aria-controls="navbar")
+							span(class="sr-only") Toggle navigation
+							span(class="icon-bar")
+							span(class="icon-bar")
+							span(class="icon-bar")
+						a(class="navbar-brand brand", href="/") Online-formatter.com
+					#navbar.navbar-collapse.collapse
+						ul(class="nav navbar-nav")
+							li
+								a(href="/formatters") Formatters
+							li
+								a(href="/encoder-decoder") Encoders & Decoders
+							li
+								a(href="/generators") Generators
+							li
+								a(href="/hashes") Hashes
+
+						ul(class="nav navbar-nav navbar-right")
+							li
+								a(href="/contact") Contact
+		section.content
+			.container
+				.row
+					//menu
+					.col-md-3
+						ul(class="nav nav-pills nav-stacked side-menu")
+							li(class="nav-header")
+								a(data-toggle="collapse" data-target="#formatter")
+									span Formatters
+								ul(class="nav nav-pills nav-stacked collapse in", id="formatter")
+									li
+										a(href="json-formatter")
+											i JSON Formatter
+									li
+										a(href="html-formatter")
+											i HTML Formatter
+									li
+										a(href="xml-formatter")
+											i XML Formatter
+									li
+										a(href="css-formatter")
+											i CSS Formatter
+
+							li(class="nav-header")
+								a(data-toggle="collapse" data-target="#encode-decode")
+									span Encoders & Decoders
+								ul(class="nav nav-pills nav-stacked collapse in", id="encode-decode")
+									li
+										a(href="url-encode-decode")
+											i Url Encoder & Decoder
+									li
+										a(href="base64-encode-decode")
+											i Base 64 Encoder & Decoder
+
+							li(class="nav-header")
+								a(data-toggle="collapse" data-target="#generator")
+									span Generators
+								ul(class="nav nav-pills nav-stacked collapse in", id="generator")
+									li
+										a(href="credit-card-generator")
+											i Credit Card Generator
+									li.menu-active
+										a(href="qr-code-generator")
+											i QR Code Generator
+
+							li(class="nav-header")
+								a(data-toggle="collapse" data-target="#hash")
+									span Hashes
+								ul(class="nav nav-pills nav-stacked collapse in", id="hash")
+									//li
+										a(href="#")
+											i Adler32
+									//li
+										a(href="#")
+											i CRC-32
+									//li
+										a(href="#")
+											i CRC-32B
+									//li
+										a(href="#")
+											i Gost
+									//li
+										a(href="#")
+											i Haval-128
+									//li
+										a(href="#")
+											i htpasswd Apache
+									li
+										a(href="md4")
+											i MD4
+									li
+										a(href="md5")
+											i MD5
+									//li
+										a(href="#")
+											i RIPEMD-128
+									li
+										a(href="ripemd160")
+											i RIPEMD-160
+									li
+										a(href="sha1")
+											i SHA-1
+									li
+										a(href="sha256")
+											i SHA-256
+									li
+										a(href="sha384")
+											i SHA-384
+									li
+										a(href="sha512")
+											i SHA-512
+									//li
+										a(href="#")
+											i Snefru
+									//li
+										a(href="#")
+											i Tiger-128
+									//li
+										a(href="#")
+											i Tiger-160
+									//li
+										a(href="#")
+											i Tiger-192
+									//li
+										a(href="#")
+											i Whirlpool
+
+							//li(class="nav-header")
+								a(data-toggle="collapse" data-target="#encrypt-decrypt")
+									span Encrypt/Decrypt
+								ul(class="nav nav-pills nav-stacked collapse in", id="encrypt-decrypt")
+									li
+										a(href="#")
+											i Blowfish
+
+							//li(class="nav-header")
+								a(data-toggle="collapse" data-target="#validator")
+									span Validators
+								ul(class="nav nav-pills nav-stacked collapse in", id="validator")
+									li
+										a(href="#")
+											i JSON Validator
+									li
+										a(href="#")
+											i HTML Validator
+									li
+										a(href="#")
+											i XML Validator - XSD
+									li
+										a(href="#")
+											i XPath Tester
+									li
+										a(href="#")
+											i Regular Expression Tester
+					//content
+					.col-md-9.content
+						.content-inner
+							h3(class="page-header") QR Code Generator
+							p This free tool lets you generate QR Codes for address books (vcard), email, geo coordinates, telephones (tel), sms , url, plain text, wifi connection string and more.
+							br
+							//ads
+
+							//content
+							.col-md-6
+								form(class="form-horizontal")
+									.form-group
+										label(class="col-sm-4 control-label", for="qr_code_type") QR Code Type
+										.col-sm-8
+											select(class="form-control", id="qr_code_type")
+												option(value="text") Plain Text
+												option(value="url") URL
+												option(value="sms") SMS (SMSTO)
+												option(value="email") Email (MAILTO)
+												option(value="tel") Telephone (TEL)
+												option(value="address-book") Address Book (VCARD)
+												//option(value="event") Event (VEVENT)
+												option(value="geo") Geo Coordinates (GEO)
+												option(value="wifi") WiFi
+									div(class="qr-controls", id="address-book", style="display: none;")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_name") * Name:
+											.col-sm-8
+												input(class="form-control", id="qr_code_name")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_company") Company:
+											.col-sm-8
+												input(class="form-control", id="qr_code_company")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_occupation") Occupation:
+											.col-sm-8
+												input(class="form-control", id="qr_code_occupation")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_telephone") Telephone:
+											.col-sm-8
+												input(class="form-control", id="qr_code_telephone")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_email") Email:
+											.col-sm-8
+												input(class="form-control", id="qr_code_email")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_address") Address:
+											.col-sm-8
+												input(class="form-control", id="qr_code_address")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_url") Website Url:
+											.col-sm-8
+												input(class="form-control", id="qr_code_url")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_note") Note:
+											.col-sm-8
+												input(class="form-control", id="qr_code_note")
+									div(class="qr-controls", id="email", style="display: none;")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_email_email") * Email:
+											.col-sm-8
+												input(class="form-control", id="qr_code_email_email")
+									div(class="qr-controls", id="event", style="display: none;")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_title") * Title:
+											.col-sm-8
+												input(class="form-control", id="qr_code_title")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_location") * Location:
+											.col-sm-8
+												input(class="form-control", id="qr_code_location")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_description") Description:
+											.col-sm-8
+												input(class="form-control", id="qr_code_description")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_start_date") * Start Date:
+											.col-sm-8
+												input(class="form-control", id="qr_code_start_date")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_end_date") * End Date:
+											.col-sm-8
+												input(class="form-control", id="qr_code_end_date")
+									div(class="qr-controls", id="geo", style="display: none;")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_latitude") * Latitude: (Ex: 40.860284)
+											.col-sm-8
+												input(class="form-control", id="qr_code_latitude")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_longitude") * Longitude: (Ex: -73.183363)
+											.col-sm-8
+												input(class="form-control", id="qr_code_longitude")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_query_string") Query String:
+											.col-sm-8
+												input(class="form-control", id="qr_code_query_string")
+									div(class="qr-controls", id="text", style="display: block;")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_text") * Text:
+											.col-sm-8
+												textarea(class="form-control", id="qr_code_text", rows="3")
+									div(class="qr-controls", id="sms", style="display: none;")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_sms_telephone") * Telephone:
+											.col-sm-8
+												input(class="form-control", id="qr_code_sms_telephone")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_message") * Message:
+											.col-sm-8
+												textarea(class="form-control", id="qr_code_message", rows="3")
+									div(class="qr-controls", id="telephone", style="display: none;")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_telephone_telephone") * Telephone:
+											.col-sm-8
+												input(class="form-control", id="qr_code_telephone_telephone")
+									div(class="qr-controls", id="url", style="display: none;")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_url_url") * URL:
+											.col-sm-8
+												input(class="form-control", id="qr_code_url_url")
+									div(class="qr-controls", id="wifi", style="display: none;")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_ssid") * SSID:
+											.col-sm-8
+												input(class="form-control", id="qr_code_ssid")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_password") * Password:
+											.col-sm-8
+												input(class="form-control", id="qr_code_password")
+										.form-group
+											label(class="col-sm-4 control-label", for="qr_code_network_type") Network Type:
+											.col-sm-8
+												select(class="form-control", id="qr_code_network_type")
+													option(value="WEP") WEP
+													option(value="WPA/WPA2") WPA/WPA2
+
+
+
+
+									.form-group
+										label(class="col-sm-4 control-label", for="level_type") Correct Level
+										.col-sm-8
+											select(class="form-control", id="level_type")
+												option(value="L") L (Low) 7%
+												option(value="M") M (Medium) 15%
+												option(value="Q") Q (Quartile) 25%
+												option(value="H") H (High) 30%
+									.form-group
+										.col-sm-offset-4.col-sm-8
+											button(class="btn btn-primary", id="qr_code_btn") Generate
+
+
+							.col-md-6
+								div(id="qr_code_output", class="col-md-12")
+								.col-sm-offset-3.col-sm-9
+									//button(class="btn btn-primary", id="qr_download_btn") Download
+									a(class="btn btn-primary", id="qr_download_btn", download="qrcode.png", href="#") Download
+
+						.container
+							h4(style="font-size: medium; font-weight: bold;") What Are QR codes?
+							p QR is short for Quick Response (they can be read quickly by a cell phone). They are used to take a piece of information from a transitory media and put it in to your cell phone.
+							hr
+							h4(style="font-size: medium; font-weight: bold") Why should I care about QR Codes?
+							p With as many as half of us now owning smartphones, and that number growing on a daily basis, QR Codes have the potential to have a major impact upon society and particularly in advertising, marketing and customer service with a wealth of product information just one scan away.
+							hr
+							h4(style="font-size: medium; font-weight: bold") How do I scan a QR Code?
+							p If you have a smartphone like an iPhone, Android or Blackberry then there a number of different barcode scanner applications such as Red Laser, Barcode Scanner and QR Scanner that can read and decode data from a QR code. The majority of these are completely FREE, and all you have to do once you install one is to use your phone's camera to scan the barcode, which will then automatically load the encoded data for you.
+							hr
+							h4(style="font-size: medium; font-weight: bold") What can be encoded into a QR Code?
+							ul
+								li In its simplest sense a QR Code is an 'image-based hypertext link' that can be used offline – any URL can be encoded into a QR Code so essentially any webpage can be opened automatically as a result of scanning the barcode. If you want to encourage someone to like your Facebook page – have your Facebook profile page as the URL. Want your video to go viral – encode the URL in your QR Code. The options are endless.
+								li In addition to website URLs a QR Code can also contain a phone number – so when it is scanned it prompts the user to call a particular number. Similarly you can encode an SMS text message, V-card data or just plain alphanumeric text. The smartphone or 2D barcode reading device will automatically know which application to use to open the content embedded within the QR Code.
+
+					//ads
+					//.col-md-3
+
+
+
+		// Bootstrap core JavaScript
+		// ==================================================
+		// Placed at the end of the document so the pages load faster
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==", crossorigin="anonymous")
+		script(src='javascripts/qrcode.min.js')
+		script(src='javascripts/main.js')
+		script(src='javascripts/qrcode-start.js')
