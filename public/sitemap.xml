@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://online-formatter.com/</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://online-formatter.com/formatters</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://online-formatter.com/encoder-decoder</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://online-formatter.com/generators</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://online-formatter.com/hashes</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://online-formatter.com/contact</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://online-formatter.com/json-formatter</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://online-formatter.com/html-formatter</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://online-formatter.com/xml-formatter</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://online-formatter.com/css-formatter</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://online-formatter.com/url-encode-decode</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://online-formatter.com/base64-encode-decode</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://online-formatter.com/credit-card-generator</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://online-formatter.com/qr-code-generator</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://online-formatter.com/md4</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://online-formatter.com/md5</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://online-formatter.com/ripemd160</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://online-formatter.com/sha1</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://online-formatter.com/sha256</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://online-formatter.com/sha384</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://online-formatter.com/sha512</loc>
+  <changefreq>weekly</changefreq>
+</url>
+</urlset>
