@@ -23,26 +23,26 @@ router.get('/hashes', function(req, res, next) {
     res.render('hashes', { title: 'Hashes Tools' });
 });
 
-router.get('/md4', function(req, res, next) {
-    res.render('md4', { title: 'MD4 Hash Generator' });
+router.get('/md4-hash-generator', function(req, res, next) {
+    res.render('md4-hash-generator', { title: 'MD4 Hash Generator' });
 });
-router.get('/md5', function(req, res, next) {
-  res.render('md5', { title: 'MD5 Hash Generator' });
+router.get('/md5-hash-generator', function(req, res, next) {
+  res.render('md5-hash-generator', { title: 'MD5 Hash Generator' });
 });
-router.get('/sha1', function(req, res, next) {
-  res.render('sha1', { title: 'SHA1 Hash Generator' });
+router.get('/sha1-hash-generator', function(req, res, next) {
+  res.render('sha1-hash-generator', { title: 'SHA1 Hash Generator' });
 });
-router.get('/sha256', function(req, res, next) {
-  res.render('sha256', { title: 'SHA1 Hash Generator' });
+router.get('/sha-256-hash-generator', function(req, res, next) {
+  res.render('sha-256-hash-generator', { title: 'SHA1 Hash Generator' });
 });
-router.get('/sha384', function(req, res, next) {
-  res.render('sha384', { title: 'SHA1 Hash Generator' });
+router.get('/sha-384-hash-generator', function(req, res, next) {
+  res.render('sha-384-hash-generator', { title: 'SHA1 Hash Generator' });
 });
-router.get('/sha512', function(req, res, next) {
-    res.render('sha512', { title: 'SHA1 Hash Generator' });
+router.get('/sha-512-hash-generator', function(req, res, next) {
+    res.render('sha-512-hash-generator', { title: 'SHA1 Hash Generator' });
 });
-router.get('/ripemd160', function(req, res, next) {
-    res.render('ripemd160', { title: 'ripemd160 Hash Generator' });
+router.get('/ripemd-160-hash-generator', function(req, res, next) {
+    res.render('ripemd-160-hash-generator', { title: 'ripemd-160 Hash Generator' });
 });
 router.get('/json-formatter', function(req, res, next) {
     res.render('json-formatter', { title: 'JSON Formatter' });

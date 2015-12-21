@@ -4,9 +4,18 @@ html(lang='en')
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
-		meta(name='description', content='SHA1 Hash Generator')
-		meta(name='author', content='SHA-256 Hash Generator')
-		title SHA-256 Hash Generator
+		meta(name='description', content='Online tool to generate a SHA-384 hash based on a string. SHA-384 Hash Generator. SHA-384 Checksum.')
+
+		meta(name='keywords', content='SHA-384, SHA-384 hash, SHA-384 generator, SHA-384 create, SHA-384 string, SHA-384 encode, SHA-384 encrypt, SHA-384 password')
+		meta(name="robots" content="index, follow" )
+		meta(property="og:type" content="website" )
+		meta(property="og:url" content="http://Online-formatter.com/sha384" )
+		meta(property="og:title" content="SHA-384 Hash Generator Online" )
+		meta(property="og:description" content="Online tool to generate a SHA-384 hash based on a string. SHA-384 Hash Generator. SHA-384 Checksum." )
+		meta(property="og:site_name" content="Online-formatter.com" )
+		link(rel="canonical", href="http://online-formatter.com/sha384")
+
+		title SHA-384 Hash Generator Online
 		// Bootstrap core CSS
 		link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", rel="stylesheet", integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==", crossorigin="anonymous")
 		link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==", crossorigin="anonymous")
@@ -22,7 +31,7 @@ html(lang='en')
 				.container
 					.navbar-header
 						button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar", aria-expanded="false", aria-controls="navbar")
-							span(class="sr-only") Toggle navigation
+							span(class="sr-only") Online-formatter.com
 							span(class="icon-bar")
 							span(class="icon-bar")
 							span(class="icon-bar")
@@ -114,28 +123,28 @@ html(lang='en')
 										a(href="#")
 											i htpasswd Apache
 									li
-										a(href="md4")
+										a(href="md4-hash-generator")
 											i MD4
 									li
-										a(href="md5")
+										a(href="md5-hash-generator")
 											i MD5
 									//li
 										a(href="#")
 											i RIPEMD-128
 									li
-										a(href="ripemd160")
+										a(href="ripemd-160-hash-generator")
 											i RIPEMD-160
 									li
-										a(href="sha1")
+										a(href="sha1-hash-generator")
 											i SHA-1
-									li.menu-active
-										a(href="sha256")
-											i SHA-256
 									li
-										a(href="sha384")
+										a(href="sha-256-hash-generator")
+											i SHA-256
+									li.menu-active
+										a(href="sha-384-hash-generator")
 											i SHA-384
 									li
-										a(href="sha512")
+										a(href="sha-512-hash-generator")
 											i SHA-512
 									//li
 										a(href="#")
@@ -183,8 +192,8 @@ html(lang='en')
 					//content
 					.col-md-6.content
 						.content-inner
-							h3(class="page-header") SHA-256 Hash Generator
-							p Computes a digest from a string using SHA-256 algorithms
+							h1(class="page-header") SHA-384 Hash Generator
+							p Computes a digest from a string using SHA-384 algorithms
 							br
 							//ads
 
@@ -192,16 +201,16 @@ html(lang='en')
 							//content
 							form(class="form-horizontal")
 								.form-group
-									label(class="col-sm-2 control-label", for="sha256_input") String to hash
+									label(class="col-sm-2 control-label", for="sha384_input") String to hash
 									.col-sm-10
-										textarea(class="form-control", id="sha256_input", rows=5)
+										textarea(class="form-control", id="sha384_input", rows=5)
 								.form-group
 									.col-sm-offset-2.col-sm-10
-										button(class="btn btn-primary", id="sha256_btn") Generate
+										button(class="btn btn-primary", id="sha384_btn") Generate
 								.form-group
-									label(class="col-sm-2 control-label", for="sha256_output") Result
+									label(class="col-sm-2 control-label", for="sha384_output") Result
 									.col-sm-10
-										pre(id="sha256_output", style="height:100px; padding: 15px")
+										pre(id="sha384_output", style="height:100px; padding: 15px")
 
 							br
 							br
@@ -244,7 +253,7 @@ html(lang='en')
 
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
 		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==", crossorigin="anonymous")
-		script(src='http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha256.js')
+		script(src='http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha384.js')
 		script(src='javascripts/main.min.js')
 
 		script.

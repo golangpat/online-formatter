@@ -4,9 +4,18 @@ html(lang='en')
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
-		meta(name='description', content='MD5 Hash Generator')
-		meta(name='author', content='MD5 Hash Generator')
-		title Credit Card Generator
+		meta(name='description', content='An online tool to generate credit card numbers for all major brands. This program is intended for testing purposes only.')
+		meta(name="language", content="en")
+		meta(name="robots", content="all")
+		meta(charset="utf-8")
+		meta(name="keywords", content="credit,card,number,generator,credit card,credit cards,credit card number,credit card numbers,valid credit card number, credit card number generator")
+		meta(name="title", content="Credit Card Number Generator")
+		meta(property="og:title", content="Credit Card Number Generator")
+		meta(property="og:site_name", content="online-formatter.com")
+		meta(property="og:description", content="An online tool to generate credit card numbers for all major brands. This program is intended for testing purposes only.")
+		link(rel="canonical", href="http://online-formatter.com/credit-card-generator")
+		meta(property="og:url", content="http://online-formatter.com/credit-card-generator")
+		title Credit Card Number Generator
 		// Bootstrap core CSS
 		link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", rel="stylesheet", integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==", crossorigin="anonymous")
 		link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==", crossorigin="anonymous")
@@ -22,7 +31,7 @@ html(lang='en')
 				.container
 					.navbar-header
 						button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar", aria-expanded="false", aria-controls="navbar")
-							span(class="sr-only") Toggle navigation
+							span(class="sr-only") Online-formatter.com
 							span(class="icon-bar")
 							span(class="icon-bar")
 							span(class="icon-bar")
@@ -114,28 +123,28 @@ html(lang='en')
 										a(href="#")
 											i htpasswd Apache
 									li
-										a(href="md4")
+										a(href="md4-hash-generator")
 											i MD4
 									li
-										a(href="md5")
+										a(href="md5-hash-generator")
 											i MD5
 									//li
 										a(href="#")
 											i RIPEMD-128
 									li
-										a(href="ripemd160")
+										a(href="ripemd-160-hash-generator")
 											i RIPEMD-160
 									li
 										a(href="sha1")
 											i SHA-1
 									li
-										a(href="sha256")
+										a(href="sha-256-hash-generator")
 											i SHA-256
 									li
-										a(href="sha384")
+										a(href="sha-384-hash-generator")
 											i SHA-384
 									li
-										a(href="sha512")
+										a(href="sha-512-hash-generator")
 											i SHA-512
 									//li
 										a(href="#")
@@ -183,8 +192,8 @@ html(lang='en')
 					//content
 					.col-md-6.content
 						.content-inner
-							h3(class="page-header") Credit Card Generator
-							p These credit card numbers DO NOT work! They are for testing purposes only. Without a valid owner name, an expiration date and a valid CVV code, they can't be used for real transactions. This program is intended for developers who are studying credit cards algorithms, and persons who want to test their credit or debit card numbers.
+							h1(class="page-header") Credit Card Generator
+							p This program is intended for testing purposes only. Without a valid owner name, an expiration date and a valid CVV code, they can't be used for real transactions. This program is intended for developers who are studying credit cards algorithms, and persons who want to test their credit or debit card numbers.
 							br
 							//ads
 
@@ -229,7 +238,7 @@ html(lang='en')
 							br
 							br
 							h4(style="font-size: medium; font-weight: bold") How to validate a Credit Card Number?
-							p Most credit card number can be validated using the Luhn algorithm, which is more or a less a glorified Modulo 10 formula!
+							p Most credit card number can be validated using the Luhn algorithm, also known as the "modulus 10" or "mod 10" algorithm.
 
 							.ad-wrapper
 								script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
@@ -245,12 +254,11 @@ html(lang='en')
 
 							hr
 							h4(style="font-size: medium; font-weight: bold") The Luhn Formula:
+							p The formula verifies a number against its included check digit, which is usually appended to a partial account number to generate the full account number. This number must pass the following test:
 							ul
-								li Drop the last digit from the number. The last digit is what we want to check against
-								li Reverse the numbers
-								li Multiply the digits in odd positions (1, 3, 5, etc.) by 2 and subtract 9 to all any result higher than 9
-								li Add all the numbers together
-								li The check digit (the last number of the card) is the amount that you would need to add to get a multiple of 10 (Modulo 10)
+								li From the rightmost digit, which is the check digit, moving left, double the value of every second digit; if the product of this doubling operation is greater than 9 (e.g., 8 × 2 = 16), then sum the digits of the products (e.g., 16: 1 + 6 = 7, 18: 1 + 8 = 9).
+								li Take the sum of all the digits.
+								li If the total modulo 10 is equal to 0 (if the total ends in zero) then the number is valid according to the Luhn formula; else it is not valid.
 
 					//ads
 					.col-md-3
