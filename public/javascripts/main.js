@@ -50,29 +50,19 @@ $(function () {
 
     $('#json_formatter_btn').on('click', function () {
         try {
-            var indentation = $('#indentation').val();
             var opts = {};
-            if(indentation == '2'){
-                opts.indent_size = 2;
-            }
-            else if(indentation == '3'){
-                opts.indent_size = 3;
-            }
-            else if(indentation == '4'){
-                opts.indent_size = 4;
-            }
-            else if(indentation == 'tab'){
-                opts.indent_with_tabs = true;
-            }
+            opts.indent_size = $('#tab-size').val();
+            opts.indent_char = opts.indent_size == 1 ? '\t' : ' ';
+            opts.max_preserve_newlines = $('#max-preserve-newlines').val();
+            opts.preserve_newlines = opts.max_preserve_newlines !== "-1";
+            opts.wrap_line_length = $('#wrap-line-length').val();
+            opts.brace_style = $('#brace-style').val();
 
-            var output = js_beautify($('#json_formatter_input').val(), opts);
-            $('#json_formatter_output').text(output);
-            $('#json_formatter_output').parent().removeClass("prettyprinted");
-            prettyPrint();
+            var output = js_beautify(editor.getValue(), opts);
+            editor.setValue(output);
         }
         catch (err) {
-            console.log(err);
-            $('#json_formatter_output').text("Not a JSON");
+            editor.setValue("Not a JSON");
         }
         return false;
     });
@@ -80,28 +70,19 @@ $(function () {
     $('#html_formatter_btn').on('click', function () {
         try {
             var opts = {};
-            var indentation = $('#indentation').val();
-            if(indentation == '2'){
-                opts.indent_size = 2;
-            }
-            else if(indentation == '3'){
-                opts.indent_size = 3;
-            }
-            else if(indentation == '4'){
-                opts.indent_size = 4;
-            }
-            else if(indentation == 'tab'){
-                opts.indent_size = 1;
-                opts.indent_char = '\t';
-            }
 
-            var output = html_beautify($('#html_formatter_input').val(), opts);
-            $('#html_formatter_output').text(output);
-            $('#html_formatter_output').parent().removeClass("prettyprinted");
-            prettyPrint();
+            opts.indent_size = $('#tab-size').val();
+            opts.indent_char = opts.indent_size == 1 ? '\t' : ' ';
+            opts.max_preserve_newlines = $('#max-preserve-newlines').val();
+            opts.preserve_newlines = opts.max_preserve_newlines !== "-1";
+            opts.wrap_line_length = $('#wrap-line-length').val();
+            opts.indent_inner_html = $('#indentation-head').val() == '1';
+
+            var output = html_beautify(editor.getValue(), opts);
+            editor.setValue(output);
         }
         catch (err) {
-            $('#html_formatter_output').text("Not a HTML");
+            editor.setValue("Not a HTML");
         }
         return false;
     });
@@ -109,7 +90,7 @@ $(function () {
     $('#xml_formatter_btn').on('click', function () {
         try {
             var opts = {};
-            var indentation = $('#indentation').val();
+            var indentation = $('#tab-size').val();
             if(indentation == '2'){
                 opts = 2;
             }
@@ -119,16 +100,17 @@ $(function () {
             else if(indentation == '4'){
                 opts = 4;
             }
-            else if(indentation == 'tab'){
+            else if(indentation == '8'){
+                opts = 8;
+            }
+            else if(indentation == '1'){
                 opts = '\t';
             }
-            var output = vkbeautify.xml($('#xml_formatter_input').val(), opts);
-            $('#xml_formatter_output').text(output);
-            $('#xml_formatter_output').parent().removeClass("prettyprinted");
-            prettyPrint();
+            var output = vkbeautify.xml(editor.getValue(), opts);
+            editor.setValue(output);
         }
         catch (err) {
-            $('#xml_formatter_output').text("Not a HTML");
+            editor.setValue("Not a XML");
         }
         return false;
     });
@@ -136,28 +118,18 @@ $(function () {
     $('#css_formatter_btn').on('click', function () {
         try {
             var opts = {};
-            var indentation = $('#indentation').val();
-            if(indentation == '2'){
-                opts.indent_size = 2;
-            }
-            else if(indentation == '3'){
-                opts.indent_size = 3;
-            }
-            else if(indentation == '4'){
-                opts.indent_size = 4;
-            }
-            else if(indentation == 'tab'){
-                opts.indent_size = 1;
-                opts.indent_char = '\t';
-            }
+            opts.indent_size = $('#tab-size').val();
+            opts.indent_char = opts.indent_size == 1 ? '\t' : ' ';
+            opts.wrap_line_length = $('#wrap-line-length').val();
+            opts.selector_separator_newline = $('#selector-separator-newline').val() == '1';
+            opts.newline_between_rules = $('#newline-between-rules').val() == '1';
 
-            var output = css_beautify($('#css_formatter_input').val(), opts);
-            $('#css_formatter_output').text(output);
-            $('#css_formatter_output').parent().removeClass("prettyprinted");
-            prettyPrint();
+            var output = css_beautify(editor.getValue(), opts);
+            editor.setValue(output);
+
         }
         catch (err) {
-            $('#css_formatter_output').text("Not a HTML");
+            editor.setValue("Not a CSS");
         }
         return false;
     });
@@ -390,7 +362,9 @@ $(function () {
             correctLevel: level
         });
         qrcode.makeCode(textToGenerate);
+
         window.setTimeout(function(){
+            $('#qr_code_output>img').attr('alt', 'QR Code generator result');
             var data = $('#qr_code_output>img').attr('src');
             console.log(data);
             $('#qr_download_btn').attr('href', data);

@@ -51,10 +51,6 @@ html(lang='en')
 								a(href="/hashes")
 									strong Hashes
 
-						ul(class="nav navbar-nav navbar-right")
-							li
-								a(href="/contact")
-									strong Contact
 		section.content
 			.container
 				.row
@@ -190,22 +186,13 @@ html(lang='en')
 										a(href="#")
 											i Regular Expression Tester
 					//content
-					.col-md-9.content
+					.col-md-9
 						.content-inner
 							h1(class="page-header") QR Code Generator
 							p Online tool let you generate QR Codes for address books (vcard), email, geo coordinates, telephones (tel), sms , url, plain text, wifi connection string and more.
 
 							//ads
-							.ad-wrapper
-								script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
-								<!-- Responsive 1 -->
-								ins(class="adsbygoogle",
-								style="display:block",
-								data-ad-client="ca-pub-3094192993322260",
-								data-ad-slot="2464367439",
-								data-ad-format="auto")
-								script.
-									(adsbygoogle = window.adsbygoogle || []).push({});
+							//.ad-wrapper
 							br
 							//content
 							.col-md-6
@@ -354,7 +341,6 @@ html(lang='en')
 							.col-md-6
 								div(id="qr_code_output", class="col-md-12")
 								.col-sm-offset-3.col-sm-9
-									//button(class="btn btn-primary", id="qr_download_btn") Download
 									a(class="btn btn-primary", id="qr_download_btn", download="qrcode.png", href="#") Download
 
 						.container
@@ -363,16 +349,7 @@ html(lang='en')
 							hr
 							h4(style="font-size: medium; font-weight: bold") Why should I care about QR Codes?
 							p With as many as half of us now owning smartphones, and that number growing on a daily basis, QR Codes have the potential to have a major impact upon society and particularly in advertising, marketing and customer service with a wealth of product information just one scan away.
-							.ad-wrapper
-								script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
-								<!-- Responsive 2 -->
-								ins(class="adsbygoogle",
-								style="display:block",
-								data-ad-client="ca-pub-3094192993322260",
-								data-ad-slot="3941100631",
-								data-ad-format="auto")
-								script.
-									(adsbygoogle = window.adsbygoogle || []).push({});
+							//.ad-wrapper
 							hr
 							h4(style="font-size: medium; font-weight: bold") How do I scan a QR Code?
 							p If you have a smartphone like an iPhone, Android or Blackberry then there a number of different barcode scanner applications such as Red Laser, Barcode Scanner and QR Scanner that can read and decode data from a QR code. The majority of these are completely FREE, and all you have to do once you install one is to use your phone's camera to scan the barcode, which will then automatically load the encoded data for you.
@@ -396,7 +373,7 @@ html(lang='en')
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
 		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==", crossorigin="anonymous")
 		script(src='javascripts/qrcode.min.js')
-		script(src='javascripts/main.min.js')
+		script(src='javascripts/main.js')
 		script(src='javascripts/qrcode-start.js')
 
 		script.
