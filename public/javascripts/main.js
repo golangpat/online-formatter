@@ -91,19 +91,19 @@ $(function () {
         try {
             var opts = {};
             var indentation = $('#tab-size').val();
-            if(indentation == '2'){
+            if (indentation == '2') {
                 opts = 2;
             }
-            else if(indentation == '3'){
+            else if (indentation == '3') {
                 opts = 3;
             }
-            else if(indentation == '4'){
+            else if (indentation == '4') {
                 opts = 4;
             }
-            else if(indentation == '8'){
+            else if (indentation == '8') {
                 opts = 8;
             }
-            else if(indentation == '1'){
+            else if (indentation == '1') {
                 opts = '\t';
             }
             var output = vkbeautify.xml(editor.getValue(), opts);
@@ -297,26 +297,26 @@ $(function () {
             textToGenerate = 'BEGIN:VCARD\r\n' +
                 'VERSION:3.0' + '\r\n' +
                 'N:' + name + '\r\n';
-            if(company != ''){
+            if (company != '') {
                 textToGenerate += 'ORG:' + company + '\r\n';
             }
-            if(occupation != ''){
+            if (occupation != '') {
                 textToGenerate += 'TITLE:' + occupation + '\r\n';
             }
-            if(telephone != ''){
+            if (telephone != '') {
                 textToGenerate += 'TEL:' + telephone + '\r\n';
             }
-            if(email != ''){
+            if (email != '') {
                 textToGenerate += 'EMAIL:' + email + '\r\n';
             }
-            if(address != ''){
-                textToGenerate +=  'ADR:' + address + '\r\n';
+            if (address != '') {
+                textToGenerate += 'ADR:' + address + '\r\n';
             }
-            if(url != ''){
-                textToGenerate +=  'URL:' + url + '\r\n';
+            if (url != '') {
+                textToGenerate += 'URL:' + url + '\r\n';
             }
-            if(note != ''){
-                textToGenerate +=  'NOTE:' + note + '\r\n';
+            if (note != '') {
+                textToGenerate += 'NOTE:' + note + '\r\n';
             }
             textToGenerate += 'END:VCARD';
 
@@ -363,7 +363,7 @@ $(function () {
         });
         qrcode.makeCode(textToGenerate);
 
-        window.setTimeout(function(){
+        window.setTimeout(function () {
             $('#qr_code_output>img').attr('alt', 'QR Code generator result');
             var data = $('#qr_code_output>img').attr('src');
             console.log(data);
@@ -373,10 +373,35 @@ $(function () {
         return false;
     });
 
-    /*$('#qr_download_btn').on('click', function () {
-        var data = $('#qr_code_output>img').attr('src');
-        window.open(data);
-    });*/
+    $('#password_generator_btn').on('click', function () {
+        var charset = "";
+        if ($("#password_number").is(':checked')) charset += "0123456789";
+        if ($("#password_lowercase").is(':checked')) charset += "abcdefghijklmnopqrstuvwxyz";
+        if ($("#password_uppercase").is(':checked')) charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        if ($("#password_symbol").is(':checked')) charset += "#$%&@";
+        if ($("#password_special").is(':checked')) charset += "!\"'()*+,-./:;<=>?[\\]^_{|}~";
+        charset = removeDuplicates(charset);
+        charset = charset.replace(/ /, "\u00A0");  // Replace space with non-breaking space
+
+        var password = "";
+        if (charset == "") {
+            alert("Error: Character set is empty");
+        } else {
+            var length;
+            length = parseInt($("#length").val(), 10);
+
+            if (length < 0 || length > 10000)
+                alert("Invalid password length");
+            else {
+                for (var i = 0; i < length; i++) {
+                    password += charset.charAt(randomInt(charset.length));
+                }
+            }
+            $('#password_output').text(password);
+        }
+        return false;
+    });
+
 
     $('#qr_code_type').on('change', function () {
         $('#address-book').hide();
@@ -424,5 +449,46 @@ $(function () {
             url = "http://" + url;
         }
         return url;
+    }
+
+    // e.g. "daabcccd" -> "dabc"
+    function removeDuplicates(s) {
+        var result = "";
+        for (var i = 0; i < s.length; i++) {
+            var c = s.charAt(i);
+            if (result.indexOf(c) == -1)
+                result += c;
+        }
+        return result;
+    }
+
+
+    // Returns a random integer in the range [0, n) using a variety of methods
+    function randomInt(n) {
+        var x = randomIntMathRandom(n);
+        x = (x + randomIntBrowserCrypto(n)) % n;
+        return x;
+    }
+
+
+    // Not secure or high quality, but always available
+    function randomIntMathRandom(n) {
+        var x = Math.floor(Math.random() * n);
+        if (x < 0 || x >= n)
+            throw "Arithmetic exception";
+        return x;
+    }
+
+
+    // Uses a secure, unpredictable random number generator if available; otherwise returns 0
+    function randomIntBrowserCrypto(n) {
+        if (typeof Uint32Array == "function" && "crypto" in window && "getRandomValues" in window.crypto) {
+            // Generate an unbiased sample
+            var x = new Uint32Array(1);
+            do window.crypto.getRandomValues(x);
+            while (x[0] - x[0] % n > 4294967296 - n);
+            return x[0] % n;
+        } else
+            return 0;
     }
 });

@@ -65,5 +65,8 @@ router.get('/credit-card-generator', function(req, res, next) {
 router.get('/qr-code-generator', function(req, res, next) {
     res.render('qr-code-generator', { title: 'QR Code Generator' });
 });
+router.get('/random-password-generator', function(req, res, next) {
+    res.render('random-password-generator', { title: 'Random Password Generator' });
+});
 
 module.exports = router;

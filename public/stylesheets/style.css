@@ -116,3 +116,20 @@ div.ad-wrapper {
 .CodeMirror pre.CodeMirror-placeholder {
     color: #999;
 }
+
+.form  .check {
+    float: right;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+.checkbox input[type=checkbox]{
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
