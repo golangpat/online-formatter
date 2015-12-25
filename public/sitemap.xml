@@ -72,6 +72,11 @@
         <priority>0.80</priority>
     </url>
     <url>
+        <loc>http://online-formatter.com/random-password-generator</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
         <loc>http://online-formatter.com/md4-hash-generator</loc>
         <changefreq>daily</changefreq>
         <priority>0.80</priority>
