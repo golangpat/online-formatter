@@ -4,14 +4,14 @@ html(lang='en')
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
-		meta(name='description', content='Online tool for formatting JSON data, into a pretty human readable format with your desired indentation level.')
+		meta(name='description', content='An online tool to view, edit and format JSON data into a pretty human readable format with your desired indentation level.')
 
 		meta(name='keywords', content='json viewer,json formatter,json beautifier,json parser,online json viewer,json viewer online,json analyser,json to xml Converter,json minifier,json tree viewer online, json web viewer,prettify json')
 		meta(name="robots" content="index, follow" )
 		meta(property="og:type" content="website" )
 		meta(property="og:url" content="http://Online-formatter.com/json-formatter" )
 		meta(property="og:title" content="JSON Formatter Online - JSON Viewer Online - Online-formatter.com" )
-		meta(property="og:description" content="Online tool for formatting JSON data, into a pretty human readable format with your desired indentation level." )
+		meta(property="og:description" content="An online tool to view, edit and format JSON data into a pretty human readable format with your desired indentation level." )
 		meta(property="og:site_name" content="Online-formatter.com" )
 		link(rel="canonical", href="http://online-formatter.com/json-formatter")
 
@@ -23,12 +23,6 @@ html(lang='en')
 
 		link(href='/stylesheets/codemirror.css', rel='stylesheet')
 		link(href='/stylesheets/style.css', rel='stylesheet')
-
-
-		script(src='javascripts/codemirror.js')
-		script(src="javascripts/addon/selection/selection-pointer.js")
-		script(src="javascripts/mode/javascript/javascript.js")
-		script(src="javascripts/addon/display/placeholder.js")
 
 		// HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
 		//if lt IE 9
@@ -113,24 +107,6 @@ html(lang='en')
 								a(data-toggle="collapse" data-target="#hash")
 									span Hashes
 								ul(class="nav nav-pills nav-stacked collapse in", id="hash")
-									//li
-										a(href="#")
-											i Adler32
-									//li
-										a(href="#")
-											i CRC-32
-									//li
-										a(href="#")
-											i CRC-32B
-									//li
-										a(href="#")
-											i Gost
-									//li
-										a(href="#")
-											i Haval-128
-									//li
-										a(href="#")
-											i htpasswd Apache
 									li
 										a(href="md4-hash-generator")
 											i MD4
@@ -155,21 +131,6 @@ html(lang='en')
 									li
 										a(href="sha-512-hash-generator")
 											i SHA-512
-									//li
-										a(href="#")
-											i Snefru
-									//li
-										a(href="#")
-											i Tiger-128
-									//li
-										a(href="#")
-											i Tiger-160
-									//li
-										a(href="#")
-											i Tiger-192
-									//li
-										a(href="#")
-											i Whirlpool
 
 							//li(class="nav-header")
 								a(data-toggle="collapse" data-target="#encrypt-decrypt")
@@ -202,7 +163,7 @@ html(lang='en')
 					.col-md-9
 						.content-inner
 							h1(class="page-header") JSON Formatter - JSON Editor
-							p Online tool for formatting JSON data, into a pretty human readable format with your desired indentation level.
+							p An online tool to view, edit and format JSON data into a pretty human readable format with your desired indentation level.
 
 							//ads
 							//.ad-wrapper
@@ -286,7 +247,12 @@ html(lang='en')
 
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
 		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==", crossorigin="anonymous")
-		script(src='javascripts/json-formatter.js')
+		script(src='javascripts/codemirror.js')
+		script(src="javascripts/addon/selection/selection-pointer.js")
+		script(src="javascripts/mode/javascript/javascript.js")
+		script(src="javascripts/addon/display/placeholder.js")
+		script(src="javascripts/addon/selection/active-line.js")
+
 		script(src='javascripts/beautify.js')
 		script(src='javascripts/main.js')
 		script(src='javascripts/json-formatter-start.js')
