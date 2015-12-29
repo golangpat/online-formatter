@@ -26,139 +26,87 @@ html(lang='en')
 		script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
 		//[endif]
 	body
-		section.header
-			nav(class="navbar navbar-default navbar-fixed-top")
-				.container
-					.navbar-header
-						button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar", aria-expanded="false", aria-controls="navbar")
-							span(class="sr-only") Online-formatter.com
-							span(class="icon-bar")
-							span(class="icon-bar")
-							span(class="icon-bar")
-						a(class="navbar-brand brand", href="/") Online-formatter.com
-					#navbar.navbar-collapse.collapse
-						ul(class="nav navbar-nav")
-							li
-								a(href="/formatters")
-									strong Formatters
-							li
-								a(href="/encoder-decoder")
-									strong Encoders & Decoders
-							li
-								a(href="/generators")
-									strong Generators
-							li
-								a(href="/hashes")
-									strong Hashes
-		section.content
-			.container
-				.row
-					//menu
-					.col-md-3
-						ul(class="nav nav-pills nav-stacked side-menu")
+		nav(class="navbar navbar-default navbar-static-top", role="navigation", style="margin-bottom: 0")
+			.navbar-header
+				button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target=".navbar-collapse", aria-expanded="false", aria-controls="navbar")
+					span(class="sr-only") Online-formatter.com
+					span(class="icon-bar")
+					span(class="icon-bar")
+					span(class="icon-bar")
+				a(class="navbar-brand brand", href="/") Online-formatter.com
+			ul(class="nav navbar-top-links navbar-right hidden-xs")
+				li
+					a(href="/formatters")
+						strong Formatters
+				li
+					a(href="/encoder-decoder")
+						strong Encoders & Decoders
+				li
+					a(href="/generators")
+						strong Generators
+				li
+					a(href="/hashes")
+						strong Hashes
+
+		.clearfix
+
+		div(class="page-container")
+			.page-sidebar-wrapper
+				div(class="page-sidebar navbar-collapse collapse", role="navigation", aria-expanded="true")
+					div(class="sidebar-nav")
+						ul(class="nav", id="side-menu")
 							li(class="nav-header")
 								a(data-toggle="collapse" data-target="#formatter")
 									span Formatters
-								ul(class="nav nav-pills nav-stacked collapse in", id="formatter")
+								ul(class="nav nav-second-level collapse in", id="formatter")
 									li
-										a(href="json-formatter")
-											i JSON Formatter
+										a(href="json-formatter") JSON Formatter
 									li
-										a(href="html-formatter")
-											i HTML Formatter
+										a(href="html-formatter") HTML Formatter
 									li
-										a(href="xml-formatter")
-											i XML Formatter
+										a(href="xml-formatter") XML Formatter
 									li
-										a(href="css-formatter")
-											i CSS Formatter
+										a(href="css-formatter") CSS Formatter
 
 							li(class="nav-header")
 								a(data-toggle="collapse" data-target="#encode-decode")
 									span Encoders & Decoders
-								ul(class="nav nav-pills nav-stacked collapse in", id="encode-decode")
+								ul(class="nav nav-second-level collapse in", id="encode-decode")
 									li
-										a(href="url-encode-decode")
-											i Url Encoder & Decoder
+										a(href="url-encode-decode") Url Encoder & Decoder
 									li.menu-active
-										a(href="base64-encode-decode")
-											i Base 64 Encoder & Decoder
+										a(href="base64-encode-decode") Base 64 Encoder & Decoder
 
 							li(class="nav-header")
 								a(data-toggle="collapse" data-target="#generator")
 									span Generators
-								ul(class="nav nav-pills nav-stacked collapse in", id="generator")
+								ul(class="nav nav-second-level collapse in", id="generator")
 									li
-										a(href="credit-card-generator")
-											i Credit Card Generator
+										a(href="credit-card-generator") Credit Card Generator
 									li
-										a(href="qr-code-generator")
-											i QR Code Generator
+										a(href="qr-code-generator") QR Code Generator
 									li
-										a(href="random-password-generator")
-											i Random Password Generator
+										a(href="random-password-generator") Random Password Generator
 
 							li(class="nav-header")
 								a(data-toggle="collapse" data-target="#hash")
 									span Hashes
-								ul(class="nav nav-pills nav-stacked collapse in", id="hash")
-									//li
-										a(href="#")
-											i Adler32
-									//li
-										a(href="#")
-											i CRC-32
-									//li
-										a(href="#")
-											i CRC-32B
-									//li
-										a(href="#")
-											i Gost
-									//li
-										a(href="#")
-											i Haval-128
-									//li
-										a(href="#")
-											i htpasswd Apache
+								ul(class="nav nav-second-level collapse in", id="hash")
 									li
-										a(href="md4-hash-generator")
-											i MD4
+										a(href="md4-hash-generator") MD4
 									li
-										a(href="md5-hash-generator")
-											i MD5
-									//li
-										a(href="#")
-											i RIPEMD-128
+										a(href="md5-hash-generator") MD5
+
 									li
-										a(href="ripemd-160-hash-generator")
-											i RIPEMD-160
+										a(href="ripemd-160-hash-generator") RIPEMD-160
 									li
-										a(href="sha1-hash-generator")
-											i SHA-1
+										a(href="sha1-hash-generator") SHA-1
 									li
-										a(href="sha-256-hash-generator")
-											i SHA-256
+										a(href="sha-256-hash-generator") SHA-256
 									li
-										a(href="sha-384-hash-generator")
-											i SHA-384
+										a(href="sha-384-hash-generator") SHA-384
 									li
-										a(href="sha-512-hash-generator")
-											i SHA-512
-									//li
-										a(href="#")
-											i Snefru
-									//li
-										a(href="#")
-											i Tiger-128
-									//li
-										a(href="#")
-											i Tiger-160
-									//li
-										a(href="#")
-											i Tiger-192
-									//li
-										a(href="#")
-											i Whirlpool
+										a(href="sha-512-hash-generator") SHA-512
 
 							//li(class="nav-header")
 								a(data-toggle="collapse" data-target="#encrypt-decrypt")
@@ -187,8 +135,10 @@ html(lang='en')
 									li
 										a(href="#")
 											i Regular Expression Tester
-					//content
-					.col-md-6
+						//content
+			div(class="page-content-wrapper")
+				.page-content
+					.col-md-8
 						.content-inner
 							h1(class="page-header") Base64 Encode & Decode
 							p Encode or decode a string so that it conforms to the Base64 Data Encodings specification.
@@ -209,7 +159,7 @@ html(lang='en')
 								.form-group
 									label(class="col-sm-2 control-label", for="base64_encode_output") Result
 									.col-sm-10
-										pre(id="base64_encode_output", style="height:100px; padding: 10px")
+										pre(id="base64_encode_output", style="min-height:100px; padding: 10px")
 
 							br
 							br
@@ -224,12 +174,12 @@ html(lang='en')
 					//ads
 					//.ad-wrapper
 
-		footer(style="margin-top: 100px;")
-			.container
+		.page-footer
+			footer(style="margin-top: 100px;")
 				hr
 				.row
 					div(class="col-xs-12", style="text-align: center;")
-						p(class="text-muted") © 2015 online-formatter.com</p>
+						p(class="text-muted") © 2015 online-formatter.com
 
 		// Bootstrap core JavaScript
 		// ==================================================

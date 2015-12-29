@@ -42,140 +42,87 @@ html(lang='en')
 		script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
 		//[endif]
 	body
-		section.header
-			nav(class="navbar navbar-default navbar-fixed-top")
-				.container
-					.navbar-header
-						button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar", aria-expanded="false", aria-controls="navbar")
-							span(class="sr-only") Online-formatter.com
-							span(class="icon-bar")
-							span(class="icon-bar")
-							span(class="icon-bar")
-						a(class="navbar-brand brand", href="/") Online-formatter.com
-					#navbar.navbar-collapse.collapse
-						ul(class="nav navbar-nav")
-							li
-								a(href="/formatters")
-									strong Formatters
-							li
-								a(href="/encoder-decoder")
-									strong Encoders & Decoders
-							li
-								a(href="/generators")
-									strong Generators
-							li
-								a(href="/hashes")
-									strong Hashes
+		nav(class="navbar navbar-default navbar-static-top", role="navigation", style="margin-bottom: 0")
+			.navbar-header
+				button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target=".navbar-collapse", aria-expanded="false", aria-controls="navbar")
+					span(class="sr-only") Online-formatter.com
+					span(class="icon-bar")
+					span(class="icon-bar")
+					span(class="icon-bar")
+				a(class="navbar-brand brand", href="/") Online-formatter.com
+			ul(class="nav navbar-top-links navbar-right hidden-xs")
+				li
+					a(href="/formatters")
+						strong Formatters
+				li
+					a(href="/encoder-decoder")
+						strong Encoders & Decoders
+				li
+					a(href="/generators")
+						strong Generators
+				li
+					a(href="/hashes")
+						strong Hashes
 
-		section.content
-			.container
-				.row
-					//menu
-					.col-md-3
-						ul(class="nav nav-pills nav-stacked side-menu")
+		.clearfix
+
+		div(class="page-container")
+			.page-sidebar-wrapper
+				div(class="page-sidebar navbar-collapse collapse", role="navigation", aria-expanded="true")
+					div(class="sidebar-nav")
+						ul(class="nav", id="side-menu")
 							li(class="nav-header")
 								a(data-toggle="collapse" data-target="#formatter")
 									span Formatters
-								ul(class="nav nav-pills nav-stacked collapse in", id="formatter")
+								ul(class="nav nav-second-level collapse in", id="formatter")
 									li
-										a(href="json-formatter")
-											i JSON Formatter
+										a(href="json-formatter") JSON Formatter
 									li.menu-active
-										a(href="html-formatter")
-											i HTML Formatter
+										a(href="html-formatter") HTML Formatter
 									li
-										a(href="xml-formatter")
-											i XML Formatter
+										a(href="xml-formatter") XML Formatter
 									li
-										a(href="css-formatter")
-											i CSS Formatter
+										a(href="css-formatter") CSS Formatter
 
 							li(class="nav-header")
 								a(data-toggle="collapse" data-target="#encode-decode")
 									span Encoders & Decoders
-								ul(class="nav nav-pills nav-stacked collapse in", id="encode-decode")
+								ul(class="nav nav-second-level collapse in", id="encode-decode")
 									li
-										a(href="url-encode-decode")
-											i Url Encoder & Decoder
+										a(href="url-encode-decode") Url Encoder & Decoder
 									li
-										a(href="base64-encode-decode")
-											i Base 64 Encoder & Decoder
+										a(href="base64-encode-decode") Base 64 Encoder & Decoder
 
 							li(class="nav-header")
 								a(data-toggle="collapse" data-target="#generator")
 									span Generators
-								ul(class="nav nav-pills nav-stacked collapse in", id="generator")
+								ul(class="nav nav-second-level collapse in", id="generator")
 									li
-										a(href="credit-card-generator")
-											i Credit Card Generator
+										a(href="credit-card-generator") Credit Card Generator
 									li
-										a(href="qr-code-generator")
-											i QR Code Generator
+										a(href="qr-code-generator") QR Code Generator
 									li
-										a(href="random-password-generator")
-											i Random Password Generator
+										a(href="random-password-generator") Random Password Generator
 
 							li(class="nav-header")
 								a(data-toggle="collapse" data-target="#hash")
 									span Hashes
-								ul(class="nav nav-pills nav-stacked collapse in", id="hash")
-									//li
-										a(href="#")
-											i Adler32
-									//li
-										a(href="#")
-											i CRC-32
-									//li
-										a(href="#")
-											i CRC-32B
-									//li
-										a(href="#")
-											i Gost
-									//li
-										a(href="#")
-											i Haval-128
-									//li
-										a(href="#")
-											i htpasswd Apache
+								ul(class="nav nav-second-level collapse in", id="hash")
 									li
-										a(href="md4-hash-generator")
-											i MD4
+										a(href="md4-hash-generator") MD4
 									li
-										a(href="md5-hash-generator")
-											i MD5
-									//li
-										a(href="#")
-											i RIPEMD-128
+										a(href="md5-hash-generator") MD5
+
 									li
-										a(href="ripemd-160-hash-generator")
-											i RIPEMD-160
+										a(href="ripemd-160-hash-generator") RIPEMD-160
 									li
-										a(href="sha1-hash-generator")
-											i SHA-1
+										a(href="sha1-hash-generator") SHA-1
 									li
-										a(href="sha-256-hash-generator")
-											i SHA-256
+										a(href="sha-256-hash-generator") SHA-256
 									li
-										a(href="sha-384-hash-generator")
-											i SHA-384
+										a(href="sha-384-hash-generator") SHA-384
 									li
-										a(href="sha-512-hash-generator")
-											i SHA-512
-									//li
-										a(href="#")
-											i Snefru
-									//li
-										a(href="#")
-											i Tiger-128
-									//li
-										a(href="#")
-											i Tiger-160
-									//li
-										a(href="#")
-											i Tiger-192
-									//li
-										a(href="#")
-											i Whirlpool
+										a(href="sha-512-hash-generator") SHA-512
 
 							//li(class="nav-header")
 								a(data-toggle="collapse" data-target="#encrypt-decrypt")
@@ -204,76 +151,76 @@ html(lang='en')
 									li
 										a(href="#")
 											i Regular Expression Tester
-					//content
-					.col-md-9
-						.content-inner
-							h1(class="page-header") HTML Formatter - HTML Editor
-							p Online tool for formatting HTML data with your desired indentation level. Make your HTML clean up, more beautiful and easier to read.
-							//ads
-							//.ad-wrapper
+						//content
+			div(class="page-content-wrapper")
+				.page-content
+					.col-md-12
+						h1(class="page-header") HTML Formatter - HTML Editor
+						p Online tool for formatting HTML data with your desired indentation level. Make your HTML clean up, more beautiful and easier to read.
+						//ads
+						//.ad-wrapper
 
-							br
-							//content
-							div(class="col-sm-12", style="margin-bottom: 20px" )
-								form(class="form-horizontal col-md-4 col-sm-6")
-									.form-group
-										.col-sm-12
-											select(class="form-control input-sm", id="tab-size")
-												option(value="1") Indent with a tab character
-												option(value="2") Indent with 2 spaces
-												option(value="3") Indent with 3 spaces
-												option(value="4") Indent with 4 spaces
-												option(value="8") Indent with 8 spaces
-									.form-group
-										.col-sm-12
-											select(class="form-control input-sm", id="wrap-line-length")
-												option(value="0") Do not wrap lines
-												option(value="40") Wrap lines near 40 characters
-												option(value="70") Wrap lines near 70 characters
-												option(value="80") Wrap lines near 80 characters
-												option(value="110") Wrap lines near 110 characters
-												option(value="120") Wrap lines near 120 characters
-												option(value="160") Wrap lines near 160 characters
+						br
+						//content
+						div(class="col-sm-12", style="margin-bottom: 20px" )
+							form(class="form-horizontal col-md-4 col-sm-6")
+								.form-group
+									.col-sm-12
+										select(class="form-control input-sm", id="tab-size")
+											option(value="1") Indent with a tab character
+											option(value="2") Indent with 2 spaces
+											option(value="3") Indent with 3 spaces
+											option(value="4") Indent with 4 spaces
+											option(value="8") Indent with 8 spaces
+								.form-group
+									.col-sm-12
+										select(class="form-control input-sm", id="wrap-line-length")
+											option(value="0") Do not wrap lines
+											option(value="40") Wrap lines near 40 characters
+											option(value="70") Wrap lines near 70 characters
+											option(value="80") Wrap lines near 80 characters
+											option(value="110") Wrap lines near 110 characters
+											option(value="120") Wrap lines near 120 characters
+											option(value="160") Wrap lines near 160 characters
 
-								form(class="form-horizontal col-md-4 col-sm-6")
-									.form-group
-										.col-sm-12
-											select(class="form-control input-sm", id="max-preserve-newlines")
-												option(value="-1") Remove all extra newlines
-												option(value="1") Allow 1 newline between tokens
-												option(value="2") Allow 2 newlines between tokens
-												option(value="5") Allow 5 newlines between tokens
-												option(value="10") Allow 10 newlines between tokens
-												option(value="0") Allow unlimited newlines between tokens
-									.form-group
-										.col-sm-12
-											select(class="form-control input-sm", id="indentation-head")
-												option(value="-1") Do not indent &lt;head&gt; and &lt;body&gt; sections
-												option(value="1") Indent &lt;head&gt; and &lt;body&gt; sections
-								form(class="form-horizontal col-md-12", style="margin-top:5px")
-									.form-group
-										.col-sm-10
-											button(class="btn btn-primary", id="html_formatter_btn") Format Code
-							.col-sm-12
-								form
-									textarea(id="formatter_output", name="code", placeholder="Code goes here...")
-
-
-							//ads
-							//.ad-wrapper
-
-							.col-sm-12
-								h2(style="font-size: medium; font-weight: bold") What is HTML?
-								p HTML is a <strong>markup</strong> language for <strong>describing</strong> web documents (web pages).
-								ul
-									li HTML stands for <b>H</b>yper <b>T</b>ext <b>M</b>arkup <b>L</b>anguage
-									li A markup language is a set of <b>markup tags</b>
-									li HTML documents are described by <b>HTML tags</b>
-									li Each HTML tag <b>describes</b> different document content
+							form(class="form-horizontal col-md-4 col-sm-6")
+								.form-group
+									.col-sm-12
+										select(class="form-control input-sm", id="max-preserve-newlines")
+											option(value="-1") Remove all extra newlines
+											option(value="1") Allow 1 newline between tokens
+											option(value="2") Allow 2 newlines between tokens
+											option(value="5") Allow 5 newlines between tokens
+											option(value="10") Allow 10 newlines between tokens
+											option(value="0") Allow unlimited newlines between tokens
+								.form-group
+									.col-sm-12
+										select(class="form-control input-sm", id="indentation-head")
+											option(value="-1") Do not indent &lt;head&gt; and &lt;body&gt; sections
+											option(value="1") Indent &lt;head&gt; and &lt;body&gt; sections
+							form(class="form-horizontal col-md-12", style="margin-top:5px")
+								.form-group
+									.col-sm-10
+										button(class="btn btn-primary", id="html_formatter_btn") Format Code
+						.col-sm-12
+							form
+								textarea(id="formatter_output", name="code", placeholder="Code goes here...")
 
 
-		footer(style="margin-top: 100px;")
-			.container
+						//ads
+						//.ad-wrapper
+
+						.col-sm-12
+							h2(style="font-size: medium; font-weight: bold") What is HTML?
+							p HTML is a <strong>markup</strong> language for <strong>describing</strong> web documents (web pages).
+							ul
+								li HTML stands for <b>H</b>yper <b>T</b>ext <b>M</b>arkup <b>L</b>anguage
+								li A markup language is a set of <b>markup tags</b>
+								li HTML documents are described by <b>HTML tags</b>
+								li Each HTML tag <b>describes</b> different document content
+
+		.page-footer
+			footer(style="margin-top: 100px;")
 				hr
 				.row
 					div(class="col-xs-12", style="text-align: center;")
@@ -284,7 +231,7 @@ html(lang='en')
 
 		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==", crossorigin="anonymous")
 		script(src='javascripts/beautify-html.js')
-		script(src='javascripts/main.js')
+		script(src='javascripts/main.min.js')
 
 		script(src='javascripts/html-formatter-start.js')
 

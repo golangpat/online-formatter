@@ -30,142 +30,88 @@ html(lang='en')
 		script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
 		//[endif]
 	body
-		section.header
-			nav(class="navbar navbar-default navbar-fixed-top")
-				.container
-					.navbar-header
-						button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar", aria-expanded="false", aria-controls="navbar")
-							span(class="sr-only") Online-formatter.com
-							span(class="icon-bar")
-							span(class="icon-bar")
-							span(class="icon-bar")
-						a(class="navbar-brand brand", href="/") Online-formatter.com
-					#navbar.navbar-collapse.collapse
-						ul(class="nav navbar-nav")
-							li
-								a(href="/formatters")
-									strong Formatters
-							li
-								a(href="/encoder-decoder")
-									strong Encoders & Decoders
-							li
-								a(href="/generators")
-									strong Generators
-							li
-								a(href="/hashes")
-									strong Hashes
+		nav(class="navbar navbar-default navbar-static-top", role="navigation", style="margin-bottom: 0")
+			.navbar-header
+				button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target=".navbar-collapse", aria-expanded="false", aria-controls="navbar")
+					span(class="sr-only") Online-formatter.com
+					span(class="icon-bar")
+					span(class="icon-bar")
+					span(class="icon-bar")
+				a(class="navbar-brand brand", href="/") Online-formatter.com
+			ul(class="nav navbar-top-links navbar-right hidden-xs")
+				li
+					a(href="/formatters")
+						strong Formatters
+				li
+					a(href="/encoder-decoder")
+						strong Encoders & Decoders
+				li
+					a(href="/generators")
+						strong Generators
+				li
+					a(href="/hashes")
+						strong Hashes
 
+		.clearfix
 
-
-		section.content
-			.container
-				.row
-					//menu
-					.col-md-3
-						ul(class="nav nav-pills nav-stacked side-menu")
+		div(class="page-container")
+			.page-sidebar-wrapper
+				div(class="page-sidebar navbar-collapse collapse", role="navigation", aria-expanded="true")
+					div(class="sidebar-nav")
+						ul(class="nav", id="side-menu")
 							li(class="nav-header")
 								a(data-toggle="collapse" data-target="#formatter")
 									span Formatters
-								ul(class="nav nav-pills nav-stacked collapse in", id="formatter")
+								ul(class="nav nav-second-level collapse in", id="formatter")
 									li
-										a(href="json-formatter")
-											i JSON Formatter
+										a(href="json-formatter") JSON Formatter
 									li
-										a(href="html-formatter")
-											i HTML Formatter
+										a(href="html-formatter") HTML Formatter
 									li
-										a(href="xml-formatter")
-											i XML Formatter
+										a(href="xml-formatter") XML Formatter
 									li
-										a(href="css-formatter")
-											i CSS Formatter
+										a(href="css-formatter") CSS Formatter
 
 							li(class="nav-header")
 								a(data-toggle="collapse" data-target="#encode-decode")
 									span Encoders & Decoders
-								ul(class="nav nav-pills nav-stacked collapse in", id="encode-decode")
+								ul(class="nav nav-second-level collapse in", id="encode-decode")
 									li
-										a(href="url-encode-decode")
-											i Url Encoder & Decoder
+										a(href="url-encode-decode") Url Encoder & Decoder
 									li
-										a(href="base64-encode-decode")
-											i Base 64 Encoder & Decoder
+										a(href="base64-encode-decode") Base 64 Encoder & Decoder
 
 							li(class="nav-header")
 								a(data-toggle="collapse" data-target="#generator")
 									span Generators
-								ul(class="nav nav-pills nav-stacked collapse in", id="generator")
+								ul(class="nav nav-second-level collapse in", id="generator")
 									li
-										a(href="credit-card-generator")
-											i Credit Card Generator
+										a(href="credit-card-generator") Credit Card Generator
 									li
-										a(href="qr-code-generator")
-											i QR Code Generator
+										a(href="qr-code-generator") QR Code Generator
 									li
-										a(href="random-password-generator")
-											i Random Password Generator
+										a(href="random-password-generator") Random Password Generator
 
 							li(class="nav-header")
 								a(data-toggle="collapse" data-target="#hash")
 									span Hashes
-								ul(class="nav nav-pills nav-stacked collapse in", id="hash")
-									//li
-										a(href="#")
-											i Adler32
-									//li
-										a(href="#")
-											i CRC-32
-									//li
-										a(href="#")
-											i CRC-32B
-									//li
-										a(href="#")
-											i Gost
-									//li
-										a(href="#")
-											i Haval-128
-									//li
-										a(href="#")
-											i htpasswd Apache
+								ul(class="nav nav-second-level collapse in", id="hash")
 									li
-										a(href="md4-hash-generator")
-											i MD4
+										a(href="md4-hash-generator") MD4
 									li
-										a(href="md5-hash-generator")
-											i MD5
-									//li
-										a(href="#")
-											i RIPEMD-128
+										a(href="md5-hash-generator") MD5
+
 									li
-										a(href="ripemd-160-hash-generator")
-											i RIPEMD-160
+										a(href="ripemd-160-hash-generator") RIPEMD-160
 									li
-										a(href="sha1-hash-generator")
-											i SHA-1
+										a(href="sha1-hash-generator") SHA-1
 									li
-										a(href="sha-256-hash-generator")
-											i SHA-256
+										a(href="sha-256-hash-generator") SHA-256
 									li
-										a(href="sha-384-hash-generator")
-											i SHA-384
+										a(href="sha-384-hash-generator") SHA-384
 									li
-										a(href="sha-512-hash-generator")
-											i SHA-512
-									//li
-										a(href="#")
-											i Snefru
-									//li
-										a(href="#")
-											i Tiger-128
-									//li
-										a(href="#")
-											i Tiger-160
-									//li
-										a(href="#")
-											i Tiger-192
-									//li
-										a(href="#")
-											i Whirlpool
+										a(href="sha-512-hash-generator") SHA-512
+
 							//li(class="nav-header")
 								a(data-toggle="collapse" data-target="#encrypt-decrypt")
 									span Encrypt/Decrypt
@@ -173,6 +119,7 @@ html(lang='en')
 									li
 										a(href="#")
 											i Blowfish
+
 							//li(class="nav-header")
 								a(data-toggle="collapse" data-target="#validator")
 									span Validators
@@ -192,80 +139,81 @@ html(lang='en')
 									li
 										a(href="#")
 											i Regular Expression Tester
+						//content
+			div(class="page-content-wrapper")
+				.page-content
 					//content
-					.col-md-6
-						.content-inner
-							h1(class="page-header") Free Formatter, Generator, Encode & Decode and Hash tools
-							h2(style="font-size: medium; font-weight: bold") FORMATTERS
-							ul
-								li
-									a(href="/json-formatter") JSON Formatter
-									p Formats a JSON string with your desired indentation level.
-								li
-									a(href="/html-formatter") HTML Formatter
-									p Formats a HTML string with your desired indentation level.
-								li
-									a(href="xml-formatter") XML Formatter
-									p Formats a XML string with your desired indentation level.
-								li
-									a(href="/css-formatter") CSS Formatter
-									p Formats a CSS string with your desired indentation level.
-							hr
-							h2(style="font-size: medium; font-weight: bold") ENCODERS & DECODERS
-							ul
-								li
-									a(href="/url-encode-decode") Url Encoder & Decoder
-									p URL encoding converts characters into a format that can be transmitted over the Internet.
-								li
-									a(href="/base64-encode-decode") Base64 Encoder & Decoder
-									p Encodes or decodes a string so that it conforms to the Base64 Data Encodings specification (RFC 4648).
-							hr
-							h2(style="font-size: medium; font-weight: bold") GENERATORS
-							ul
-								li
-									a(href="/credit-card-generator") Credit Card Generator
-									p Generates fake credit card numbers for all major brands.
-								li
-									a(href="/qr-code-generator") QR Code Generator
-									p This free tool lets you generate QR Codes for address books (vcard), email, geo coordinates, telephones (tel), sms , url, plain text, wifi connection string and more.
-								li
-									a(href="/random-password-generator") Random Password Generator
-									p Simple tool for generating strong and secure passwords that are difficult to crack or guess. You can specify password length and used chars (lowercase, uppercase, numbers or symbols).
-									p All the computation is done locally on the client side. No data is sent to or received from the server.
+					.col-md-8
+						h1(class="page-header") Free Formatter, Generator, Encode & Decode and Hash tools
+						h2(style="font-size: medium; font-weight: bold") FORMATTERS
+						ul
+							li
+								a(href="/json-formatter") JSON Formatter
+								p Formats a JSON string with your desired indentation level.
+							li
+								a(href="/html-formatter") HTML Formatter
+								p Formats a HTML string with your desired indentation level.
+							li
+								a(href="xml-formatter") XML Formatter
+								p Formats a XML string with your desired indentation level.
+							li
+								a(href="/css-formatter") CSS Formatter
+								p Formats a CSS string with your desired indentation level.
+						hr
+						h2(style="font-size: medium; font-weight: bold") ENCODERS & DECODERS
+						ul
+							li
+								a(href="/url-encode-decode") Url Encoder & Decoder
+								p URL encoding converts characters into a format that can be transmitted over the Internet.
+							li
+								a(href="/base64-encode-decode") Base64 Encoder & Decoder
+								p Encodes or decodes a string so that it conforms to the Base64 Data Encodings specification (RFC 4648).
+						hr
+						h2(style="font-size: medium; font-weight: bold") GENERATORS
+						ul
+							li
+								a(href="/credit-card-generator") Credit Card Generator
+								p Generates fake credit card numbers for all major brands.
+							li
+								a(href="/qr-code-generator") QR Code Generator
+								p This free tool lets you generate QR Codes for address books (vcard), email, geo coordinates, telephones (tel), sms , url, plain text, wifi connection string and more.
+							li
+								a(href="/random-password-generator") Random Password Generator
+								p Simple tool for generating strong and secure passwords that are difficult to crack or guess. You can specify password length and used chars (lowercase, uppercase, numbers or symbols).
+								p All the computation is done locally on the client side. No data is sent to or received from the server.
 
-							hr
-							h2(style="font-size: medium; font-weight: bold") HASHES
-							ul
-								li
-									a(href="/md4-hash-generator") MD4 Hash Generator
-									p Computes a digest from a string using MD4 algorithms.
-								li
-									a(href="/md5-hash-generator") MD5 Hash Generator
-									p Computes a digest from a string using MD5 algorithms.
-								li
-									a(href="/ripemd-160-hash-generator") RIPEMD-160 Hash Generator
-									p Computes a digest from a string using RIPEMD-160 algorithms.
-								li
-									a(href="/sha1-hash-generator") SHA1 Hash Generator
-									p Computes a digest from a string using SHA1 algorithms.
-								li
-									a(href="/sha-256-hash-generator") SHA-256 Hash Generator
-									p Computes a digest from a string using SHA-256 algorithms.
-								li
-									a(href="/sha-384-hash-generator") SHA-384 Hash Generator
-									p Computes a digest from a string using SHA-384 algorithms.
-								li
-									a(href="sha-512-hash-generator") SHA-512 Hash Generator
-									p Computes a digest from a string using SHA-512 algorithms.
+						hr
+						h2(style="font-size: medium; font-weight: bold") HASHES
+						ul
+							li
+								a(href="/md4-hash-generator") MD4 Hash Generator
+								p Computes a digest from a string using MD4 algorithms.
+							li
+								a(href="/md5-hash-generator") MD5 Hash Generator
+								p Computes a digest from a string using MD5 algorithms.
+							li
+								a(href="/ripemd-160-hash-generator") RIPEMD-160 Hash Generator
+								p Computes a digest from a string using RIPEMD-160 algorithms.
+							li
+								a(href="/sha1-hash-generator") SHA1 Hash Generator
+								p Computes a digest from a string using SHA1 algorithms.
+							li
+								a(href="/sha-256-hash-generator") SHA-256 Hash Generator
+								p Computes a digest from a string using SHA-256 algorithms.
+							li
+								a(href="/sha-384-hash-generator") SHA-384 Hash Generator
+								p Computes a digest from a string using SHA-384 algorithms.
+							li
+								a(href="sha-512-hash-generator") SHA-512 Hash Generator
+								p Computes a digest from a string using SHA-512 algorithms.
 						//Content
 						//Ads
 					//ads
-					.col-md-3
+					.col-md-4
 						//.ad-wrapper
 
-
-		footer(style="margin-top: 100px;")
-			.container
+		.page-footer
+			footer(style="margin-top: 100px;")
 				hr
 				.row
 					div(class="col-xs-12", style="text-align: center;")
