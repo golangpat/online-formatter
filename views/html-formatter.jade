@@ -23,23 +23,11 @@ html(lang='en')
 
 		link(href='/stylesheets/codemirror.css', rel='stylesheet')
 		link(href='/stylesheets/style.css', rel='stylesheet')
-		script(src='javascripts/codemirror.js')
-
-		script(src="javascripts/addon/selection/selection-pointer.js")
-		script(src="javascripts/mode/xml/xml.js")
-		script(src="javascripts/mode/javascript/javascript.js")
-		script(src="javascripts/mode/css/css.js")
-		script(src="javascripts/mode/vbscript/vbscript.js")
-		script(src='javascripts/mode/htmlmixed/htmlmixed.js')
-		script(src="javascripts/addon/display/placeholder.js")
-		script(src="javascripts/addon/selection/active-line.js")
-		script(src="javascripts/addon/edit/matchtags.js")
-		script(src="javascripts/addon/fold/xml-fold.js")
 
 		// HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
 		//[if lt IE 9]
-		script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
-		script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+		script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js', async)
+		script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js', async)
 		//[endif]
 	body
 		nav(class="navbar navbar-default navbar-static-top", role="navigation", style="margin-bottom: 0")
@@ -230,6 +218,19 @@ html(lang='en')
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
 
 		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==", crossorigin="anonymous")
+
+		script(src='javascripts/codemirror.js')
+		script(src="javascripts/addon/selection/selection-pointer.js")
+		script(src="javascripts/mode/xml/xml.js")
+		script(src="javascripts/mode/javascript/javascript.js")
+		script(src="javascripts/mode/css/css.js")
+		script(src="javascripts/mode/vbscript/vbscript.js")
+		script(src='javascripts/mode/htmlmixed/htmlmixed.js')
+		script(src="javascripts/addon/display/placeholder.js")
+		script(src="javascripts/addon/selection/active-line.js")
+		script(src="javascripts/addon/edit/matchtags.js")
+		script(src="javascripts/addon/fold/xml-fold.js")
+
 		script(src='javascripts/beautify-html.js')
 		script(src='javascripts/main.min.js')
 
