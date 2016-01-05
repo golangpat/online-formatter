@@ -43,28 +43,6 @@ router.get('/ripemd-160-hash-generator', function(req, res, next) {
 });
 
 
-router.get('/md4', function(req, res, next) {
-    res.render('md4-hash-generator', { title: 'MD4 Hash Generator' });
-});
-router.get('/md5', function(req, res, next) {
-    res.render('md5-hash-generator', { title: 'MD5 Hash Generator' });
-});
-router.get('/sha1', function(req, res, next) {
-    res.render('sha1-hash-generator', { title: 'SHA1 Hash Generator' });
-});
-router.get('/sha256', function(req, res, next) {
-    res.render('sha-256-hash-generator', { title: 'SHA1 Hash Generator' });
-});
-router.get('/sha384', function(req, res, next) {
-    res.render('sha-384-hash-generator', { title: 'SHA1 Hash Generator' });
-});
-router.get('/sha512', function(req, res, next) {
-    res.render('sha-512-hash-generator', { title: 'SHA1 Hash Generator' });
-});
-router.get('/ripemd160', function(req, res, next) {
-    res.render('ripemd-160-hash-generator', { title: 'ripemd-160 Hash Generator' });
-});
-
 router.get('/json-formatter', function(req, res, next) {
     res.render('json-formatter', { title: 'JSON Formatter' });
 });
