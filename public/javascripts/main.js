@@ -149,13 +149,13 @@ $(function () {
 
     $('#url_encode_btn').on('click', function () {
         var plaintext = $('#url_encode_input').val();
-        var hashValue = encodeURI(plaintext);
+        var hashValue = encodeURIComponent(plaintext);
         $('#url_encode_output').text(hashValue);
         return false;
     });
     $('#url_decode_btn').on('click', function () {
         var plaintext = $('#url_encode_input').val();
-        var hashValue = decodeURI(plaintext);
+        var hashValue = decodeURIComponent(plaintext);
         $('#url_encode_output').text(hashValue);
         return false;
     });
