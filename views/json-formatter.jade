@@ -204,14 +204,13 @@ html(lang='en')
 							p JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. It is based on a subset of the JavaScript Programming Language, Standard ECMA-262 3rd Edition - December 1999. JSON is a text format that is completely language independent but uses conventions that are familiar to programmers of the C-family of languages, including C, C++, C#, Java, JavaScript, Perl, Python, and many others. These properties make JSON an ideal data-interchange language.
 							hr
 							h2(style="font-size: medium; font-weight: bold") Data types and syntax
-							p
-								ul
-									li <b>Number</b>: a signed decimal number that may contain a fractional part and may use exponential E notation. JSON does not allow non-numbers like NaN, nor does it make any distinction between integer and floating-point. (Even though JavaScript uses a double-precision floating-point format for all its numeric values, other languages implementing JSON may encode numbers differently)
-									li <b>String</b>: a sequence of zero or more Unicode characters. Strings are delimited with double-quotation marks and support a backslash escaping syntax.
-									li <b>Boolean</b>: either of the values <code>true</code> or <code>false</code>
-									li <b>Array</b>: an ordered list of zero or more values, each of which may be of any type. Arrays use square bracket notation with elements being comma-separated.
-									li <b>Object</b>: an unordered collection of name/value pairs where the names (also called keys) are strings. Since objects are intended to represent associative arrays, it is recommended, though not required, that each key is unique within an object. Objects are delimited with curly brackets and use commas to separate each pair, while within each pair the colon ':' character separates the key or name from its value.
-									li <b>null</b>: An empty value, using the word <code>null</code>
+							ul
+								li <b>Number</b>: a signed decimal number that may contain a fractional part and may use exponential E notation. JSON does not allow non-numbers like NaN, nor does it make any distinction between integer and floating-point. (Even though JavaScript uses a double-precision floating-point format for all its numeric values, other languages implementing JSON may encode numbers differently)
+								li <b>String</b>: a sequence of zero or more Unicode characters. Strings are delimited with double-quotation marks and support a backslash escaping syntax.
+								li <b>Boolean</b>: either of the values <code>true</code> or <code>false</code>
+								li <b>Array</b>: an ordered list of zero or more values, each of which may be of any type. Arrays use square bracket notation with elements being comma-separated.
+								li <b>Object</b>: an unordered collection of name/value pairs where the names (also called keys) are strings. Since objects are intended to represent associative arrays, it is recommended, though not required, that each key is unique within an object. Objects are delimited with curly brackets and use commas to separate each pair, while within each pair the colon ':' character separates the key or name from its value.
+								li <b>null</b>: An empty value, using the word <code>null</code>
 							p <b>Whitespace</b> is allowed and ignored around or between syntactic elements (values and punctuation, but not within a string value). However, only four specific characters are considered whitespace for this purpose: space, horizontal tab, line feed, and carriage return. JSON does not provide or allow any sort of comment syntax.
 
 
